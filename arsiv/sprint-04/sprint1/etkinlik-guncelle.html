@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Etkinlik Güncelle</title>
+</head>
+<body>
+
+    <!-- Ana Başlık -->
+    <h1>Etkinlik Güncelle</h1>
+    
+    <!-- Menü (Sayfalar arası geçiş için) -->
+    <nav>
+        <a href="index.html">Ana Sayfa</a>
+        <a href="etkinlik-ekle.html">Ekle</a>
+        <a href="etkinlik-guncelle.html">Güncelle</a>
+    </nav>
+    
+    <br> <!-- Biraz boşluk bırakmak için -->
+
+    <!-- Güncelleme Formu Başlıyor -->
+    <form action="#" method="POST">
+        
+        <!-- Etkinlik Adı Kutusu -->
+        <label for="etkinlik_adi">Etkinlik Adı</label><br>
+        <!-- value="Kariyer Günleri" kodu, kutunun dolu gelmesini sağlar -->
+        <input type="text" id="etkinlik_adi" name="etkinlik_adi" value="Kariyer Günleri" required><br><br>
+
+        <!-- Kategori Seçim Kutusu -->
+        <label for="kategori">Kategori</label><br>
+        <select id="kategori" name="kategori" required>
+            <!-- "selected" kelimesi, Seminer seçeneğinin otomatik seçili gelmesini sağlar -->
+            <option value="seminer" selected>Seminer</option>
+            <option value="atolye">Atölye</option>
+        </select><br><br>
+
+        <!-- Tarih Kutusu -->
+        <label for="tarih">Tarih</label><br>
+        <!-- Tarih her zaman YIL-AY-GÜN (2026-10-12) şeklinde yazılmalıdır ki tarayıcı anlasın -->
+        <input type="date" id="tarih" name="tarih" value="2026-10-12" required><br><br>
+
+        <!-- Açıklama Kutusu -->
+        <label for="aciklama">Açıklama</label><br>
+        <!-- textarea (büyük metin kutusu) etiketinde value kullanılmaz, yazı iki kodun tam arasına yazılır -->
+        <textarea id="aciklama" name="aciklama" rows="4" required>Mezun söyleşileri</textarea><br><br>
+
+        <!-- Güncelle Butonu -->
+        <button type="submit">Güncelle</button>
+        
+    </form>
+
+</body>
+</html>
