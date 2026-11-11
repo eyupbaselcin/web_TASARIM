@@ -1,0 +1,19 @@
+{
+  "name": "kampus-etkinlik-backend",
+  "version": "1.0.0",
+  "description": "Kampüs etkinlikleri için Express REST API",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch src/server.js",
+    "start": "node src/server.js"
+  },
+  "keywords": [],
+  "author": "Eyüp Başelçin - 2416501043",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.10",
+    "express": "^5.3.0"
+  }
+}
