@@ -1,6 +1,5 @@
 import express from "express";
 import cors from "cors";
-import mongoose from "mongoose";
 import eventRoutes from "./routes/event-routes.js";
 
 const app = express();
@@ -13,7 +12,6 @@ app.get("/health", (req, res) => {
     status: "ok",
     time: new Date().toISOString(),
     student: "2416501043",
-    database: mongoose.connection.readyState === 1 ? "connected" : "disconnected",
   });
 });
 

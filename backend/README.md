@@ -60,7 +60,7 @@ Gerçek Atlas adresi ve şifre **sadece** `backend/.env` içinde durur; koda, RE
 
 | Method | Endpoint | Amaç | Başarılı | Hata | Durum |
 | --- | --- | --- | --- | --- | --- |
-| GET | `/health` | Sunucu ve veritabanı durumu | 200 | — | Hazır |
+| GET | `/health` | Sunucu durumu | 200 | — | Hazır |
 | GET | `/events` | Listeyi getir (`?category=Atölye` isteğe bağlı) | 200 | 500 | Hazır |
 | GET | `/events/:id` | Tek etkinlik (`:id` = MongoDB `_id`) | 200 | 404, 500 | Hazır |
 | POST | `/events` | Yeni etkinlik oluştur | 201 | 400, 500 | Hazır |
@@ -100,7 +100,7 @@ backend/
 
 | # | İstek | Beklenen |
 | --- | --- | --- |
-| 1 | GET `/health` | 200 · `status: "ok"`, `database: "connected"`, `student` |
+| 1 | GET `/health` | 200 · `status: "ok"`, `time`, `student` |
 | 2 | GET `/events` | 200 · 6 kayıt, her birinde `_id`, `createdAt`, `updatedAt` |
 | 3 | GET `/events/{{eventId}}` | 200 · listeden kopyalanan `_id` (collection değişkeni) |
 | 4 | GET `/events/yok` | 404 · error |
