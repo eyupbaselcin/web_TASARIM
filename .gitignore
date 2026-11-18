@@ -3,3 +3,8 @@ dist/
 .env
 .DS_Store
 *.log
+
+# Editor ve Postman yerel ayarlari
+.vscode/
+.postman/
+postman/
