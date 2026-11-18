@@ -1,6 +1,6 @@
-export const events = [
+// Örnek veri: npm run seed ile veritabanına girer. id alanı yok, MongoDB _id verir.
+export const seedEvents = [
   {
-    id: "event-1",
     title: "Girişimcilik Zirvesi 2026",
     category: "Seminer",
     capacity: 150,
@@ -10,7 +10,6 @@ export const events = [
     description: "Kampüsten çıkan start-up kurucuları fikirden ürüne giden yolu anlatıyor.",
   },
   {
-    id: "event-2",
     title: "Drone Tasarım Atölyesi",
     category: "Atölye",
     capacity: 24,
@@ -20,7 +19,6 @@ export const events = [
     description: "Uçuş kontrol kartı ve motorlarla mini drone montajı, ekipman laboratuvardan verilir.",
   },
   {
-    id: "event-3",
     title: "Oyun Sektöründe Kariyer Söyleşisi",
     category: "Söyleşi",
     capacity: 60,
@@ -30,7 +28,6 @@ export const events = [
     description: "Bağımsız oyun geliştiricileriyle ilk oyunu yayınlama deneyimleri üzerine sohbet.",
   },
   {
-    id: "event-4",
     title: "Linux Komut Satırı Atölyesi",
     category: "Atölye",
     capacity: 35,
@@ -40,7 +37,6 @@ export const events = [
     description: "Dosya işlemleri, izinler ve bash betikleriyle terminalde rahat çalışmayı öğren.",
   },
   {
-    id: "event-5",
     title: "Veri Bilimi ve Sağlık Semineri",
     category: "Seminer",
     capacity: 90,
@@ -50,7 +46,6 @@ export const events = [
     description: "Hastane verileriyle tahmin modelleri kurmanın fırsatları ve etik sınırları.",
   },
   {
-    id: "event-6",
     title: "24 Saat Hackathon",
     category: "Yarışma",
     capacity: 80,
