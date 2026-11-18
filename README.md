@@ -7,7 +7,7 @@ Kampüsteki seminer, atölye, söyleşi ve yarışmaları listeleyen web uygulam
 | Klasör | Ne | Adres |
 | --- | --- | --- |
 | [`frontend/`](frontend) | React + Vite arayüzü (Sprint 6, bu sprintte değişmedi) | http://localhost:5173 |
-| [`backend/`](backend) | Node + Express REST API (Sprint 7), veri şimdilik bellekte | http://localhost:3000 |
+| [`backend/`](backend) | Node + Express REST API (Sprint 7-8), MongoDB bağlantılı | http://localhost:3000 |
 
 ## Çalıştırma
 
