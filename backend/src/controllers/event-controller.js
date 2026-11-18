@@ -4,8 +4,10 @@ import { Event } from "../models/event-model.js";
 // GET /events (?category=Atölye isteğe bağlı)
 export async function getEvents(req, res, next) {
   try {
-    const filter = req.query.category
-      ? { category: req.query.category } : {};
+    // Sorguya sadece düz metin girer: ?category[$ne]=x gibi operatörler işlenmez
+    const { category } = req.query;
+    const filter = typeof category === "string"
+      ? { category: { $eq: category } } : {};
     const events = await Event.find(filter).sort({ date: 1 });
     res.json(events);
   } catch (err) {
@@ -35,8 +37,12 @@ export async function getEventById(req, res, next) {
 // POST /events
 export async function createEvent(req, res, next) {
   try {
-    // Doğrulamayı schema yapar
-    const event = await Event.create(req.body ?? {});
+    // Sadece izin verilen alanlar alınır (_id, createdAt vb. istemciden gelmez).
+    // Doğrulamayı schema yapar.
+    const { title, category, capacity, date,
+      time, location, description } = req.body ?? {};
+    const event = await Event.create({ title, category, capacity, date,
+      time, location, description });
     res.status(201).json(event);
   } catch (err) {
     if (err.name === "ValidationError") {

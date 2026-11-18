@@ -4,6 +4,7 @@ import mongoose from "mongoose";
 import eventRoutes from "./routes/event-routes.js";
 
 const app = express();
+app.disable("x-powered-by"); // Express sürüm bilgisini yanıtlarda gösterme
 app.use(cors());
 app.use(express.json()); // body → req.body
 
