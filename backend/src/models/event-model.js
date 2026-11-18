@@ -1,5 +1,7 @@
 import mongoose from "mongoose";
 
+export const CATEGORIES = ["Seminer", "Atölye", "Söyleşi", "Yarışma"];
+
 // Kurallar schema'da, işlemler modelde
 const eventSchema = new mongoose.Schema(
   {
@@ -9,7 +11,7 @@ const eventSchema = new mongoose.Schema(
     },
     category: {
       type: String, required: true,
-      enum: ["Seminer", "Atölye", "Söyleşi", "Yarışma"],
+      enum: CATEGORIES,
     },
     capacity: { type: Number, min: 0, default: 0 },
     date: { type: String, required: true },

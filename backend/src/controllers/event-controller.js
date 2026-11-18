@@ -1,13 +1,18 @@
 import mongoose from "mongoose";
-import { Event } from "../models/event-model.js";
+import { Event, CATEGORIES } from "../models/event-model.js";
 
 // GET /events (?category=Atölye isteğe bağlı)
 export async function getEvents(req, res, next) {
   try {
-    // Sorguya sadece düz metin girer: ?category[$ne]=x gibi operatörler işlenmez
+    // Kullanıcının yazdığı değer sorguya hiç girmez: sabit listeden eşleşen
+    // kategori kullanılır (?category[$ne]=x gibi operatörler işlenmez).
     const { category } = req.query;
-    const filter = typeof category === "string"
-      ? { category: { $eq: category } } : {};
+    let filter = {};
+    if (category !== undefined) {
+      const match = CATEGORIES.find((c) => c === category);
+      if (!match) return res.json([]); // bilinmeyen kategori: boş liste
+      filter = { category: match };
+    }
     const events = await Event.find(filter).sort({ date: 1 });
     res.json(events);
   } catch (err) {
